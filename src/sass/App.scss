@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$fontFamily: Verdana, Geneva, Tahoma, sans-serif;
+$bodyColor: #eeeeee;
+
+@import "./body";
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+#root {
+  @include flexCenter(column);
+  height: 100vh;
+
+  .location,
+  .temperature {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30vh;
+    width: 50%;
+  }
+
+  .location-city,
+  .temperature-description {
+    font-size: 40px;
+  }
+
+  .temperature {
+    flex-direction: column;
+  }
+
+  .temperature-section {
+    display: flex;
+    align-items: center;
+  }
+
+  .temperature-section span {
+    margin: 10px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .temperature-section h2 {
+    font-size: 60px;
+  }
+}

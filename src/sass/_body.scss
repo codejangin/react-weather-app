@@ -1,0 +1,13 @@
+@mixin linearBackground($deg, $firstRgba, $secondRgba) {
+  background: linear-gradient($deg, $firstRgba, $secondRgba);
+}
+
+body {
+  @include linearBackground(
+    180deg,
+    rgba(28, 144, 127, 1) 0%,
+    rgba(35, 87, 157, 1) 100%
+  );
+  font-family: $fontFamily;
+  color: $bodyColor;
+}
